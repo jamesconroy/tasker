@@ -10,7 +10,7 @@ require('./models/db');
 require('./models/Tasks');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var tasks = require('./routes/tasks');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api/tasks', tasks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
